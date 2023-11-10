@@ -11,9 +11,9 @@ namespace DecoratorAssignment
 
     public abstract class Beverage
     {
-        public abstract decimal Cost();
-        public string Description;
-        public string GetDescription() => Description; 
+        public abstract decimal Cost();// Abstract method to get the cost of the beverage
+        public string Description;// Public property to hold the description of the beverage
+        public string GetDescription() => Description;// Method to get the description of the beverage
     }
     public class Espresso : Beverage
     {
@@ -40,7 +40,7 @@ namespace DecoratorAssignment
         protected Beverage beverage;
         public CondimentDecorator(Beverage beverage)
         {
-            this.beverage = beverage;
+            this.beverage = beverage;// Constructor to set the beverage
         }
     }
     public class Mocha : CondimentDecorator
@@ -91,6 +91,7 @@ namespace DecoratorAssignment
     {
         static void Main(string[] args)
         {
+            // Creating instances of different beverages and decorating them with condiments.
             Beverage darkRoast = new DarkRoast();
             // Decorate it with Mocha and Whipped Cream
             darkRoast = new Mocha(darkRoast);
